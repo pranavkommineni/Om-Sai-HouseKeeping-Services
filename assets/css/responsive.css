@@ -1,0 +1,200 @@
+/* ============================================================
+   OM SAI HOUSEKEEPING — RESPONSIVE STYLES
+   ============================================================ */
+
+/* ─── TABLET (≤900px) ────────────────────────────────────── */
+@media (max-width: 900px) {
+    :root {
+        --space-xl: 5rem;
+        --space-lg: 3rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hero-stats {
+        position: static;
+        margin-top: 3rem;
+        border-radius: 12px;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .why-image-collage {
+        height: 380px;
+    }
+
+    .ceo-teaser {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .ceo-photo-wrap {
+        max-width: 340px;
+    }
+
+    .about-intro-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .ceo-profile {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .ceo-photos-gallery {
+        max-width: 340px;
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+        max-width: 100%;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .form-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .services-detail {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .services-detail.reverse {
+        direction: ltr;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ─── MOBILE (≤600px) ────────────────────────────────────── */
+@media (max-width: 600px) {
+    :root {
+        --space-xl: 4rem;
+        --space-lg: 2.5rem;
+    }
+
+    .hero {
+        padding: 5rem 5% 3rem;
+        min-height: auto;
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+
+    .hero-stats {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 0;
+    }
+
+    .hero-stat {
+        min-width: 100px;
+        padding: 1.2rem 1.4rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .premium-form {
+        padding: 2rem 1.5rem;
+    }
+
+    .contact-form-wrap {
+        padding: 1.5rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .social-links-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ceo-name-badge {
+        right: 0;
+        bottom: -1rem;
+    }
+
+    .why-image-collage {
+        height: 280px;
+    }
+
+    .trust-strip {
+        flex-direction: column;
+        gap: 1.2rem;
+        align-items: flex-start;
+        padding: 1.5rem 5%;
+    }
+
+    .cta-banner {
+        padding: 3rem 5%;
+    }
+
+    .section-heading {
+        font-size: 1.7rem;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .nav-brand-text {
+        display: none;
+    }
+}
+
+/* ─── VERY SMALL (≤380px) ─────────────────────────────────── */
+@media (max-width: 380px) {
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .hero-actions .btn-gold,
+    .hero-actions .btn-outline {
+        justify-content: center;
+    }
+}
