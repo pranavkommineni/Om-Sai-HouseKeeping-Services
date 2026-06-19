@@ -1,6 +1,6 @@
 # 🏠 Housekeeping Services Website
 
-A modern, responsive, and professional housekeeping services website designed to showcase cleaning and facility management solutions. Built using **HTML5**, **CSS3**, and **Vanilla JavaScript**, the website provides a seamless user experience across desktop, tablet, and mobile devices.
+A modern, responsive, and professional housekeeping services website designed to showcase cleaning and facility management solutions. Built using **HTML5**, **CSS3**, and **Vanilla JavaScript**, the website provides a seamless user experience across desktop, tablet, and mobile devices.This is a project that i have taken for my fathers personal business.
 
 ---
 
