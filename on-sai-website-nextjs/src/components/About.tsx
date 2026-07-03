@@ -28,7 +28,7 @@ export default function About() {
           <div className="shine-frame rounded-3xl overflow-hidden shadow-2xl relative h-[520px]">
             <Image
               src="/assets/ceo-team.jpeg"
-              alt="On Sai House Keeping Services team"
+              alt="Om Sai Housekeeping Services team"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"

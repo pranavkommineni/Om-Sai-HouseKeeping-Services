@@ -24,9 +24,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'On Sai House Keeping Services | Hospital, School, College & Mall Housekeeping',
+  title: 'Om Sai Housekeeping Services | Hospital, School, College & Mall Housekeeping',
   description:
-    'On Sai House Keeping Services — trusted housekeeping for hospitals, schools, colleges, and shopping malls since 2013. Serving all areas within 50 km of Hayathnagar, Telangana.',
+    'Om Sai Housekeeping Services — trusted housekeeping for hospitals, schools, colleges, and shopping malls since 2013. Serving all areas within 50 km of Hayathnagar, Telangana.',
   keywords: [
     'housekeeping services',
     'hospital housekeeping',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     'Hayathnagar housekeeping',
   ],
   openGraph: {
-    title: 'On Sai House Keeping Services',
+    title: 'Om Sai Housekeeping Services',
     description:
       'Trusted housekeeping for hospitals, schools, colleges & malls — serving Hayathnagar, Telangana and 50 km around.',
     type: 'website',

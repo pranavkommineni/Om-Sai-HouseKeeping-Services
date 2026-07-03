@@ -11,7 +11,7 @@ export default function Services() {
         <SectionTag
           eyebrow="What We Offer"
           title="Our Services"
-          description="Specialized housekeeping for hospitals, schools, factories, apartments, colleges, and shopping malls — tailored to each facility's standards."
+          description="Specialized housekeeping for hospitals, schools, colleges, and shopping malls — tailored to each facility's standards."
         />
 
         <div className="grid sm:grid-cols-2 gap-7">

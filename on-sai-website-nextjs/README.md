@@ -1,6 +1,6 @@
-# On Sai House Keeping Services — Website
+# Om Sai Housekeeping Services — Website
 
-A premium, fully responsive marketing website for **On Sai House Keeping Services**, built with Next.js (App Router), React, TypeScript, Tailwind CSS, and Framer Motion.
+A premium, fully responsive marketing website for **Om Sai Housekeeping Services**, built with Next.js (App Router), React, TypeScript, Tailwind CSS, and Framer Motion.
 
 ## Folder Structure
 
@@ -78,24 +78,32 @@ components: `Hero.tsx`, `About.tsx`, `Leadership.tsx`).
 
 ## Sending Contact Form Emails
 
-The contact form now posts to `src/app/api/contact/route.ts`, which
-sends an email to the owner/CEO via [Nodemailer](https://nodemailer.com).
+The contact form (`src/components/Contact.tsx`) sends emails directly
+from the browser using [EmailJS](https://www.emailjs.com) — there's no
+backend/API route involved, so it works on any static or serverless host.
 
-1. Copy `.env.local.example` to `.env.local`.
-2. Fill in **either**:
-   - `EMAIL_USER` + `EMAIL_PASS` — a Gmail address and an
-     [App Password](https://myaccount.google.com/apppasswords)
-     (requires 2‑Step Verification on that Gmail account), **or**
-   - `SMTP_HOST` / `SMTP_PORT` / `SMTP_USER` / `SMTP_PASS` — for any
-     other email provider (SendGrid, Zoho Mail, Outlook, hosting SMTP, etc.)
-3. Optionally set `CONTACT_TO_EMAIL` to the inbox that should receive
-   bookings (defaults to the email in `src/data/siteConfig.ts`).
-4. Restart `npm run dev` after editing `.env.local`.
+1. Copy `.env.local.example` to `.env.local` (already pre-filled with
+   the project's EmailJS credentials):
+   - `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`
+   - `NEXT_PUBLIC_EMAILJS_SERVICE_ID`
+   - `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`
+2. In your [EmailJS dashboard](https://dashboard.emailjs.com/admin/templates),
+   make sure the template (`template_mae62wm`) has a "To email" set to
+   the owner's inbox (`madhukrishnakommineni2050@gmail.com`), and that
+   it uses these variables so they map to the form fields:
+   `{{name}}`, `{{phone}}`, `{{email}}`, `{{service}}`, `{{message}}`.
+   A hidden `to_email` field is also submitted if you'd rather set the
+   recipient dynamically from `{{to_email}}` in the template.
+3. Restart `npm run dev` after editing `.env.local`.
 
-Every time a client submits the form on the site, the owner/CEO's inbox
-receives an email with the client's name, phone, email, service
-requested, and message, with "reply-to" set to the client's email so
-you can reply directly.
+Every time a client submits the form on the site, EmailJS delivers an
+email straight to the owner/CEO's inbox with the client's name, phone,
+email, service requested, and message — no server, database, or SMTP
+credentials required.
+
+> Note: the EmailJS **public key** is meant to be exposed in client-side
+> code (that's how EmailJS works), so it's safe to keep in
+> `NEXT_PUBLIC_*` env vars or committed defaults.
 
 ## Build for Production
 

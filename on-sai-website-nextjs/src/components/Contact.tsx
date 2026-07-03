@@ -1,16 +1,30 @@
 'use client';
 
-import { useState, type FormEvent } from 'react';
+import { useState, useRef, type FormEvent } from 'react';
+import emailjs from '@emailjs/browser';
+import Image from 'next/image';
 import { Phone, Mail, Clock, MapPin, Loader2 } from 'lucide-react';
 import Reveal from '@/components/ui/Reveal';
 import SectionTag from '@/components/ui/SectionTag';
 import { siteConfig } from '@/data/siteConfig';
+
+// EmailJS credentials — the public key is safe to expose in the browser
+// (that's how EmailJS is designed to work). Configure these via env vars
+// in .env.local, or they fall back to the values below.
+const EMAILJS_PUBLIC_KEY =
+  process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'KIl4t_Vej2wwzsXIR';
+const EMAILJS_SERVICE_ID =
+  process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_bbyhucv';
+const EMAILJS_TEMPLATE_ID =
+  process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_mae62wm';
 
 const services = [
   'Hospital Housekeeping',
   'School Housekeeping',
   'College Housekeeping',
   'Mall Housekeeping',
+  'Factory Housekeeping',
+  'Apartment Housekeeping',
   'Other',
 ];
 
@@ -19,41 +33,31 @@ type Status = 'idle' | 'submitting' | 'success' | 'error';
 export default function Contact() {
   const [status, setStatus] = useState<Status>('idle');
   const [errorMsg, setErrorMsg] = useState('');
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
-    const formData = new FormData(form);
-
-    const payload = {
-      name: String(formData.get('name') || ''),
-      phone: String(formData.get('phone') || ''),
-      email: String(formData.get('email') || ''),
-      service: String(formData.get('service') || ''),
-      message: String(formData.get('message') || ''),
-    };
 
     setStatus('submitting');
     setErrorMsg('');
 
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
+      // Sends the form fields straight to the owner's inbox via EmailJS —
+      // no backend/server route required. Field `name` attributes below
+      // (name, phone, email, service, message) must match the variables
+      // used in the EmailJS template (template_mae62wm).
+      await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form, {
+        publicKey: EMAILJS_PUBLIC_KEY,
       });
-
-      const data = await res.json().catch(() => ({}));
-
-      if (!res.ok) {
-        throw new Error(data?.error || 'Something went wrong. Please try again.');
-      }
 
       setStatus('success');
       form.reset();
     } catch (err) {
       setStatus('error');
-      setErrorMsg(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+      setErrorMsg(
+        err instanceof Error ? err.message : 'Something went wrong. Please try again.',
+      );
     }
   };
 
@@ -153,7 +157,13 @@ export default function Contact() {
           </Reveal>
 
           <Reveal direction="right" className="lg:col-span-3">
-            <form onSubmit={handleSubmit} className="premium-card rounded-3xl p-8 sm:p-10 space-y-5">
+            <form
+              ref={formRef}
+              onSubmit={handleSubmit}
+              className="premium-card rounded-3xl p-8 sm:p-10 space-y-5"
+            >
+              {/* Routes the notification to the owner's inbox in the EmailJS template */}
+              <input type="hidden" name="to_email" value={siteConfig.email} />
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
                   <label className="font-label text-xs font-semibold text-slate-500 mb-1.5 block">
@@ -213,7 +223,7 @@ export default function Contact() {
                 <textarea
                   name="message"
                   rows={4}
-                  placeholder="Tell us about your facility and requirements"
+                  placeholder="Tell us about your company, its location, and the number of people required for your services"
                   className="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sky"
                 />
               </div>
@@ -240,14 +250,13 @@ export default function Contact() {
         </div>
 
         <Reveal className="mt-14">
-          <div className="rounded-3xl overflow-hidden shadow-xl">
-            <iframe
-              src={siteConfig.mapEmbedSrc}
-              width="100%"
-              height="360"
-              style={{ border: 0 }}
-              loading="lazy"
-              title="On Sai House Keeping Services location"
+          <div className="relative rounded-3xl overflow-hidden shadow-xl w-full" style={{ aspectRatio: '1401 / 1120' }}>
+            <Image
+              src="/assets/service-coverage-map.png"
+              alt="Om Sai Housekeeping Services coverage map — 40 km radius from Hayathnagar, Telangana"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 1152px"
             />
           </div>
           <p className="text-center text-sm text-slate-500 mt-4 font-label">

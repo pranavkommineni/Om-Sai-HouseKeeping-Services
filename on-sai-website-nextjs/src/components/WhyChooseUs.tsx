@@ -29,7 +29,7 @@ export default function WhyChooseUs() {
 
         <Reveal direction="right" className="order-1 lg:order-2">
           <span className="font-label text-xs font-bold tracking-widest uppercase text-gold">
-            Why On Sai
+            Why Om Sai
           </span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl mt-3 mb-6 gold-underline pb-4 text-royal-deep">
             Why Businesses &amp; Homes Choose Us

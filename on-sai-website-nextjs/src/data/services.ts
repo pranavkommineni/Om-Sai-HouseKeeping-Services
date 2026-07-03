@@ -1,5 +1,5 @@
 import type { LucideIcon } from 'lucide-react';
-import { Cross, School, GraduationCap, ShoppingBag } from 'lucide-react';
+import { Cross, School, GraduationCap, ShoppingBag, Factory, Building2 } from 'lucide-react';
 
 export interface Service {
   icon: LucideIcon;
@@ -36,5 +36,19 @@ export const services: Service[] = [
     description:
       'Continuous upkeep for high-footfall shopping malls — atriums, walkways, washrooms, and food courts kept spotless for every visitor.',
     features: ['High Footfall Ready', 'Round-the-Clock', 'Guest-Ready Standards'],
+  },
+  {
+    icon: Factory,
+    title: 'Factory Housekeeping',
+    description:
+      'Industrial-grade cleaning for factories and manufacturing units — shop floors, warehouses, and common areas maintained to strict safety and hygiene standards.',
+    features: ['Industrial-Grade Cleaning', 'Safety Compliant', 'Shift-Based Staffing'],
+  },
+  {
+    icon: Building2,
+    title: 'Apartment Housekeeping',
+    description:
+      'Dependable upkeep for residential apartments and gated communities — lobbies, corridors, clubhouses, and common areas kept clean and welcoming.',
+    features: ['Common Area Care', 'Flexible Scheduling', 'Resident-Friendly Staff'],
   },
 ];

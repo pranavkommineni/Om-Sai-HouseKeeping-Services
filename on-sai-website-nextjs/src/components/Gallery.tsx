@@ -35,7 +35,7 @@ export default function Gallery() {
         <SectionTag
           eyebrow="Our Work"
           title="Gallery"
-          description="A look at the people behind On Sai's spotless standards."
+          description="A look at the people behind Om Sai's spotless standards."
         />
 
         {featured && showFeatured && (

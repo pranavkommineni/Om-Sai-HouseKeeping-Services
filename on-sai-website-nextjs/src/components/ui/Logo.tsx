@@ -5,7 +5,7 @@ interface LogoProps {
 }
 
 /**
- * On Sai brand mark — a shield (trust & protection) holding a sparkle/polish
+ * Om Sai brand mark — a shield (trust & protection) holding a sparkle/polish
  * burst, rendered in the royal-to-gold gradient that anchors the site's
  * premium palette.
  */
@@ -46,9 +46,9 @@ export default function Logo({ variant = 'dark', showText = true, className = ''
 
       {showText && (
         <span className={`font-display font-bold text-lg leading-tight ${textColor}`}>
-          On Sai
+          Om Sai
           <span className={`block text-[11px] font-label font-semibold tracking-widest ${subColor}`}>
-            HOUSE KEEPING SERVICES
+            HOUSEKEEPING SERVICES
           </span>
         </span>
       )}

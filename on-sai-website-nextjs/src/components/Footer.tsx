@@ -15,8 +15,6 @@ const footerServices = [
   'School Housekeeping',
   'College Housekeeping',
   'Mall Housekeeping',
-  'Factory Housekeeping',
-  'Apartment Housekeeping',
 ];
 
 export default function Footer() {

@@ -1,6 +1,6 @@
 export const siteConfig = {
-  name: 'On Sai House Keeping Services',
-  shortName: 'On Sai',
+  name: 'Om Sai Housekeeping Services',
+  shortName: 'Om Sai',
   founded: 2013,
   description:
     'Professional housekeeping and facility management services you can trust — trained staff, eco-friendly products, and enterprise-grade quality since 2013.',

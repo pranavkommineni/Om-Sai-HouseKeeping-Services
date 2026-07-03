@@ -10,7 +10,7 @@ export const testimonials: Testimonial[] = [
     name: 'Dr. Ramesh Naidu',
     role: 'Administrator, Multi-Speciality Hospital',
     quote:
-      'On Sai keeps our wards and OPD areas spotless every single day. Their hygiene discipline gives our patients and staff real peace of mind.',
+      'Om Sai keeps our wards and OPD areas spotless every single day. Their hygiene discipline gives our patients and staff real peace of mind.',
     rating: 5,
   },
   {
@@ -24,7 +24,7 @@ export const testimonials: Testimonial[] = [
     name: 'Suresh Kumar',
     role: 'Facility Head, Degree College',
     quote:
-      'From lecture halls to hostels, On Sai handles our entire campus reliably. Fair pricing and consistent quality every visit.',
+      'From lecture halls to hostels, Om Sai handles our entire campus reliably. Fair pricing and consistent quality every visit.',
     rating: 5,
   },
   {

@@ -29,7 +29,7 @@ export default function Leadership() {
             <div className="shine-frame w-16 h-16 rounded-full overflow-hidden shrink-0 relative">
               <Image
                 src="/assets/ceo-solo.jpeg"
-                alt="Founder and CEO, On Sai House Keeping Services"
+                alt="Founder and CEO, Om Sai Housekeeping Services"
                 fill
                 className="object-cover object-top"
               />
@@ -47,7 +47,7 @@ export default function Leadership() {
           <div className="shine-frame rounded-3xl overflow-hidden shadow-2xl relative h-[480px]">
             <Image
               src="/assets/ceo-team.jpeg"
-              alt="Founder with the On Sai House Keeping Services team"
+              alt="Founder with the Om Sai Housekeeping Services team"
               fill
               className="object-cover object-top"
             />
