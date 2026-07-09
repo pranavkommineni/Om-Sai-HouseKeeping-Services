@@ -1,0 +1,7 @@
+{
+  "name": "omsaihousekeepingservices",
+  "compatibility_date": "2026-07-09",
+  "assets": {
+    "directory": "./.next/static"
+  }
+}
