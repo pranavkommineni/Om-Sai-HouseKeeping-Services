@@ -171,6 +171,8 @@ The website is optimized for:
 * Live chat support
 
 ---
+## Hosting platform
+- Vercel
 
 ## 🤝 Contributing
 
