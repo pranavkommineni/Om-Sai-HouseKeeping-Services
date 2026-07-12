@@ -1,6 +1,6 @@
 # Om Sai Housekeeping Services — Website
 
-A premium, fully responsive marketing website for **Om Sai Housekeeping Services**, built with Next.js (App Router), React, TypeScript, Tailwind CSS, and Framer Motion. Personal service website for bussiness analysis. 
+A premium, fully responsive marketing website for **Om Sai Housekeeping Services**, built with Next.js (App Router), React, TypeScript, Tailwind CSS, and Framer Motion. Personal service website for bussiness analysis.this is begin hosted in hostinger under the domain omsaihousekeepingservices.site. 
 
 ## Folder Structure
 
