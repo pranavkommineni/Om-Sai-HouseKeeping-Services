@@ -81,6 +81,7 @@ components: `Hero.tsx`, `About.tsx`, `Leadership.tsx`).
 The contact form (`src/components/Contact.tsx`) sends emails directly
 from the browser using [EmailJS](https://www.emailjs.com) — there's no
 backend/API route involved, so it works on any static or serverless host.
+The host receives the message in the form of email to his desired account.
 
 1. Copy `.env.local.example` to `.env.local` (already pre-filled with
    the project's EmailJS credentials):
