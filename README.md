@@ -129,3 +129,4 @@ npm start
 - The Leadership section shows the title "Founder & CEO" without a
   personal name — add the name directly in `Leadership.tsx` if you'd
   like it displayed.
+- This can be implented for the display of one's portfolio.
